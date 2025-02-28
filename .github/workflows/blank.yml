@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to ${{ matrix.environment }} via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftps://64.23.197.171
+          server: 64.23.197.171
           username: zenApp
           password: zenApp
           local-dir: ./
