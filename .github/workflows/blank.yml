@@ -32,7 +32,7 @@ jobs:
           username: zenApp
           password: zenApp
           local-dir: ./
-          server-dir: /xampp/htdocs/
+          server-dir: c:/xampp/htdocs/
           exclude: |
             **/.git*
             **/.github*
