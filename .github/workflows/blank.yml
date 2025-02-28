@@ -31,7 +31,7 @@ jobs:
           server: 64.23.197.171
           username: zenApp
           password: zenApp
-          local-dir: ./htdocs/
+          local-dir: ./
           server-dir: /xampp/htdocs/
           exclude: |
             **/.git*
