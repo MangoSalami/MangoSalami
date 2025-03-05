@@ -18,6 +18,6 @@ jobs:
           username: zenApp
           password: zenApp
           script: |
-            cd C:\xampp\htdocs\
+            cd C:\xampp\htdocs\Dev
             git pull origin main
             echo "Deployment completed."
