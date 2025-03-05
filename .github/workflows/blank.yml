@@ -14,9 +14,9 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.WINDOWS_SERVER_IP }}
-          username: ${{ secrets.WINDOWS_SERVER_USER }}
-          password: ${{ secrets.WINDOWS_SERVER_PASSWORD }}
+          host: 64.23.197.171
+          username: zenApp
+          password: zenApp
           script: |
             cd C:\xampp\htdocs\your-app
             git pull origin main
