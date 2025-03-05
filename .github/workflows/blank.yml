@@ -10,30 +10,30 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+ 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy:
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        environment: [dev, qa, prod]
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
 
-      - name: Deploy to ${{ matrix.environment }} via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # Runs a single command using the runners shell
+      - name: deploying to server
+      - uses: appleboy/ssh-action@v0.1.7
         with:
-          server: 64.23.197.171
+          host: 64.23.197.171
           username: zenApp
           password: zenApp
-          local-dir: ./
-          server-dir: c:/xampp/htdocs/
-          exclude: |
-            **/.git*
-            **/.github*
-            **/node_modules/*
+          script: |
+            cd C:\xampp\htdocs\your-app
+            git pull origin main
+            echo "Deployment completed."
+
+    
