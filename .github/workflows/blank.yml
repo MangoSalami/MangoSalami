@@ -1,39 +1,23 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
+name: Deploy to Windows Server
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main  # Change to your deployment branch
 
- 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  deploy:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: deploying to server
-      - uses: appleboy/ssh-action@v0.1.7
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.7
         with:
-          host: 64.23.197.171
-          username: zenApp
-          password: zenApp
+          host: ${{ secrets.WINDOWS_SERVER_IP }}
+          username: ${{ secrets.WINDOWS_SERVER_USER }}
+          password: ${{ secrets.WINDOWS_SERVER_PASSWORD }}
           script: |
             cd C:\xampp\htdocs\your-app
             git pull origin main
             echo "Deployment completed."
-
-    
