@@ -5,6 +5,7 @@
       my portfolio.</div>🌷☺️
 - 💞️console.log(dream is to become a full stack developer🙏🏿) 
 - 📫 How to reach me ...cout<<"cell :0659942384 email:snkosinathi10@gmail.com" ;
+- commit
 
 <!---
 MangoSalami/MangoSalami is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
