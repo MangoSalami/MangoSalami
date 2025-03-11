@@ -14,7 +14,7 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: 64.23.197.171
+          host: 64.23.197.172
           username: zenApp
           password: zenApp
           script: |
