@@ -19,5 +19,5 @@ jobs:
           password: zenApp
           script: |
             cd C:\xampp\htdocs\Dev
-            git pull git@github.com:MangoSalami/MangoSalami.git main
+            git clone git@github.com:MangoSalami/MangoSalami.git
             echo "Deployment completed."
