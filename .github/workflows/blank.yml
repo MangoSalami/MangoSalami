@@ -22,6 +22,9 @@ jobs:
             powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope Process -Force"
             powershell -Command "cd C:\xampp\htdocs\Dev; echo 'In directory: '; Get-Location"
             powershell -Command "mkdir C:\xampp\htdocs\Dev\testing"
+            powershell -Command "echo 'Current directory: '; Get-Location"
+             powershell -Command "echo 'Checking if the directory exists: '; Test-Path C:\xampp\htdocs\Dev"
+
             powershell -Command "echo 'Created testing directory'"
             powershell -Command "git clone https://github.com/Mango/Mango.git C:\xampp\htdocs\Dev\testing"
             powershell -Command "echo 'Repository cloned'"
