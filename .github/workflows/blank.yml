@@ -18,9 +18,10 @@ jobs:
           username: zenApp
           password: zenApp
           script: |
-            cd C:\xampp\htdocs\Dev
-            mkdir testing
-            echo C:\xampp\htdocs\Dev
-            git clone https://github.com/MangoSalami/MangoSalami.git
-            echo
-            echo "Deployment completed."
+            powershell -Command "cd C:\xampp\htdocs\Dev"
+            powershell -Command "mkdir testing"
+            powershell -Command "echo C:\xampp\htdocs\Dev"
+            powershell -Command "git clone https://github.com/MangoSalami/MangoSalami.git C:\xampp\htdocs\Dev\testing"
+            powershell -Command "echo 'Deployment completed.'"
+
+            
