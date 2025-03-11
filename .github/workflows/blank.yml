@@ -14,11 +14,12 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: 64.23.197.172
+          host: 64.23.197.171
           username: zenApp
           password: zenApp
           script: |
             cd C:\xampp\htdocs\Dev
+            echo C:\xampp\htdocs\Dev
             git clone https://github.com/MangoSalami/MangoSalami.git
             echo
             echo "Deployment completed."
