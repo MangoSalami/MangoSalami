@@ -19,6 +19,7 @@ jobs:
           password: zenApp
           script: |
             cd C:\xampp\htdocs\Dev
+            mkdir testing
             echo C:\xampp\htdocs\Dev
             git clone https://github.com/MangoSalami/MangoSalami.git
             echo
