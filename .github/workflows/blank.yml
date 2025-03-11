@@ -12,22 +12,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.7
         with:
-          host: 64.23.197.171
-          username: zenApp
-          password: zenApp
           script: |
-           powershell -Command "echo 'Starting deployment...'"
-            powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope Process -Force"
-            powershell -Command "cd C:\xampp\htdocs\Dev; echo 'In directory: '; Get-Location"
-            powershell -Command "mkdir C:\xampp\htdocs\Dev\testing"
-            powershell -Command "echo 'Current directory: '; Get-Location"
-             powershell -Command "echo 'Checking if the directory exists: '; Test-Path C:\xampp\htdocs\Dev"
-
-            powershell -Command "echo 'Created testing directory'"
-            powershell -Command "git clone https://github.com/Mango/Mango.git C:\xampp\htdocs\Dev\testing"
-            powershell -Command "echo 'Repository cloned'"
-            powershell -Command "echo 'Deployment completed.'"
+           ssh zenApp@64.23.197.171
 
             
