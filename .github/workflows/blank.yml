@@ -16,6 +16,6 @@ jobs:
           script: |
            ssh zenApp@64.23.197.171
            cd c:\xampp\htdocs
-           git pull https://github.com/MangoSalami/MangoSalami.git testing
+           git clone https://github.com/MangoSalami/MangoSalami.git testing
 
             
