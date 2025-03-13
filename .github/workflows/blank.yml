@@ -11,9 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH
+      - name: Deploy  to windows via SSH
         with:
           script: |
            ssh zenApp@64.23.197.171
+           cd c:\xampp\htdocs
+           git pull https://github.com/MangoSalami/MangoSalami.git testing
 
             
